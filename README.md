@@ -83,6 +83,6 @@ trigger a build and scan through github action merge to main/master 23
 
 
 
-trigger a build to scan through cxflow classic 30
+trigger a build to scan 1
 
 
