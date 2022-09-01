@@ -1,0 +1,37 @@
+name: Ducky-CRM  blackduck-ci.yml - intelligent scan 
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+#        os: [windows-2016, ubuntu-latest]
+        os: [ubuntu-latest]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
+    
+#    - name: Synopsys Detect 2.0
+#      uses: blackducksoftware/github-action@2.0.0
+#      with:
+#        args: --blackduck.url="${{ secrets.BLACKDUCK_URL}}" --blackduck.api.token="${{ secrets.BLACKDUCK_API_TOKEN}}"
+
+    - name: Synopsys Detect action 3.0 intelligent scan  
+      uses: synopsys-sig/detect-action@v0.3.0
+       # env:
+        # NODE_EXTRA_CA_CERTS: ${{ secrets.LOCAL_CA_CERT_PATH }}
+      with:
+        scan-mode: INTELLIGENT # RAPID is the default value - can be excluded 
+#        scan-mode: RAPID # Can be omitted, since this is the default value
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        detect-version: 7.9.0
+        blackduck-url: ${{ secrets.TEST_BLACKDUCK_URL }}
+        blackduck-api-token: ${{ secrets.TEST_BLACKDUCK_API_TOKEN }}
