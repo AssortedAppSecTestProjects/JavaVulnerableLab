@@ -1,4 +1,4 @@
-name: Ducky-CRM  blackduck-ci.yml - intelligent scan 
+name: blackduck-ci.yml - intelligent scan 
 
 on: [push]
 
