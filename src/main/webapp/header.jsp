@@ -24,6 +24,9 @@
      <div id="Menu">
 		<ul id="menu-bar" style="margin-left: auto ;  margin-right: auto ;" >
 			<li class="current"><a href="<%=path%>">Home</a></li>
+			<li><a href="<%=path%>/billing.jsp">Billing</a></li>
+			<li><a href="<%=path%>/calendar.jsp">Calendar</a></li>
+			<li><a href="<%=path%>/seccon/register-1.jsp">SecCon 2026</a></li>
 			
 			<li><a href="#">Vulnerability</a>
 				<ul><li><a href="#">A1- Injection</a>

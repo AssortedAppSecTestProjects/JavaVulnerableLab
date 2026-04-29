@@ -8,15 +8,19 @@ package org.cysecurity.cspf.jvl.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.regex.Pattern;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.xml.namespace.QName;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
+import javax.xml.xpath.XPathVariableResolver;
 
 import org.w3c.dom.Document;
 /**
@@ -25,6 +29,7 @@ import org.w3c.dom.Document;
  */
 public class XPathQuery extends HttpServlet {
 
+    private static final Pattern SAFE_CREDENTIAL_PATTERN = Pattern.compile("^[a-zA-Z0-9_@.\\-]{1,100}$");
 
             
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -34,6 +39,10 @@ public class XPathQuery extends HttpServlet {
         try {
             String user=request.getParameter("username");
             String pass=request.getParameter("password");
+            if (!isValidCredentialInput(user) || !isValidCredentialInput(pass)) {
+                response.sendRedirect(response.encodeURL("ForwardMe?location=/vulnerability/Injection/xpath_login.jsp?err=Invalid Credentials"));
+                return;
+            }
             
             //XML Source:
             String XML_SOURCE=getServletContext().getRealPath("/WEB-INF/users.xml");
@@ -45,12 +54,25 @@ public class XPathQuery extends HttpServlet {
             Document xDoc=builder.parse(XML_SOURCE);
             
             XPath xPath=XPathFactory.newInstance().newXPath();
-            
-            //XPath Query:
-            String xPression="/users/user[username='"+user+"' and password='"+pass+"']/name";
-            
-            //running Xpath query:
-            String name=xPath.compile(xPression).evaluate(xDoc);
+
+            final String safeUser = user;
+            final String safePass = pass;
+            xPath.setXPathVariableResolver(new XPathVariableResolver() {
+                @Override
+                public Object resolveVariable(QName varName) {
+                    if ("username".equals(varName.getLocalPart())) {
+                        return safeUser;
+                    }
+                    if ("password".equals(varName.getLocalPart())) {
+                        return safePass;
+                    }
+                    return null;
+                }
+            });
+
+            // XPath query with bound variables avoids query-structure injection.
+            XPathExpression expression = xPath.compile("/users/user[username=$username and password=$password]/name");
+            String name=expression.evaluate(xDoc);
             out.println(name);
             if(name.isEmpty())
             {
@@ -71,6 +93,10 @@ public class XPathQuery extends HttpServlet {
         finally {
             out.close();
         }
+    }
+
+    private boolean isValidCredentialInput(String value) {
+        return value != null && SAFE_CREDENTIAL_PATTERN.matcher(value).matches();
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
