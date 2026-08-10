@@ -8,5 +8,4 @@ javavulnlab:
 mysql:
   image: mysql
   environment:
-    # Inject from host/.env; do not commit concrete secrets.
-    - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    - MYSQL_ROOT_PASSWORD=root
