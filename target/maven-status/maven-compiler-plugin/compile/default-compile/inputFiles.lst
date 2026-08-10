@@ -4,7 +4,6 @@
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/BillingConfigServlet.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/BillingQuoteServlet.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/BillingSetupIntentServlet.java
-/Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/CalendarWeeklyServlet.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/EmailCheck.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/ForwardMe.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/Install.java
@@ -12,15 +11,10 @@
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/Logout.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/Open.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/Register.java
-/Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/SecConConfigServlet.java
-/Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/SecConPaymentIntentServlet.java
-/Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/SecConStep1Servlet.java
-/Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/SecConStep2Servlet.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/SendMessage.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/Unsecure_Sensitive_data.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/Unsecure_Storage_of_Encryption_Key.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/UsernameCheck.java
-/Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/WeeklyPerformanceReportServlet.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/XPathQuery.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/lambda.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/rds.java
@@ -28,8 +22,6 @@
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/sqs.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/controller/xxe.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/model/BillingDataAccess.java
-/Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/model/CalendarEventDataAccess.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/model/DBConnect.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/model/HashMe.java
-/Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/model/SecConRegistration.java
 /Users/samshober/assortedappsectestprojects/JavaVulnerableLab/src/main/java/org/cysecurity/cspf/jvl/model/orm/Users.java
