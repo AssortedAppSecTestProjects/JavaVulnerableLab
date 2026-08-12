@@ -52,6 +52,22 @@
         <servlet-name>xxe</servlet-name>
         <servlet-class>org.cysecurity.cspf.jvl.controller.xxe</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BillingConfig</servlet-name>
+        <servlet-class>org.cysecurity.cspf.jvl.controller.BillingConfigServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BillingQuote</servlet-name>
+        <servlet-class>org.cysecurity.cspf.jvl.controller.BillingQuoteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BillingSetupIntent</servlet-name>
+        <servlet-class>org.cysecurity.cspf.jvl.controller.BillingSetupIntentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BillingComplete</servlet-name>
+        <servlet-class>org.cysecurity.cspf.jvl.controller.BillingCompleteServlet</servlet-class>
+    </servlet>
    
     <servlet-mapping>
         <servlet-name>Install</servlet-name>
@@ -100,6 +116,22 @@
    <servlet-mapping>
         <servlet-name>xxe</servlet-name>
         <url-pattern>/xxe.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BillingConfig</servlet-name>
+        <url-pattern>/api/billing/config</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BillingQuote</servlet-name>
+        <url-pattern>/api/billing/quote</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BillingSetupIntent</servlet-name>
+        <url-pattern>/api/billing/setup-intent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BillingComplete</servlet-name>
+        <url-pattern>/api/billing/complete</url-pattern>
     </servlet-mapping>
    
 </web-app>

@@ -46,6 +46,7 @@ if(session.getAttribute("isLoggedIn")!=null)
    }
      
    out.print("<br/><ul type='square'>");
+   out.print("<li><a href='"+path+"/billing.jsp'>Billing &amp; Payment Method</a></li>");
    out.print("<li><a href='"+path+"/vulnerability/csrf/change-info.jsp'>Change Description</a></li>");
     out.print("<li><a href='"+path+"/vulnerability/csrf/changepassword.jsp'>Change Password</a></li>");
      out.print("<li><a href='"+path+"/vulnerability/idor/change-email.jsp'>Change Email</a></li>");

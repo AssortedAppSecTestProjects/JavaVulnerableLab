@@ -24,6 +24,7 @@
      <div id="Menu">
 		<ul id="menu-bar" style="margin-left: auto ;  margin-right: auto ;" >
 			<li class="current"><a href="<%=path%>">Home</a></li>
+			<li><a href="<%=path%>/billing.jsp">Billing</a></li>
 			
 			<li><a href="#">Vulnerability</a>
 				<ul><li><a href="#">A1- Injection</a>

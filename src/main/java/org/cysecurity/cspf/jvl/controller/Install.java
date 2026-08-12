@@ -158,6 +158,18 @@ public class Install extends HttpServlet {
                                 stmt.executeUpdate("INSERT into cards(id,cardno, cvv,expirydate) values ('1','4000123456789010','123','12/2014')");
                                 stmt.executeUpdate("INSERT into cards(id,cardno, cvv,expirydate) values ('2','4111111111111111 ','321','7/2015')");
                                 stmt.executeUpdate("INSERT into cards(id,cardno, cvv,expirydate) values ('3','5111111111111118','111','1/2017')");
+
+                                // Stripe billing accounts (tokenized references only — no PAN/CVV)
+                                stmt.executeUpdate("CREATE TABLE billing_accounts ("
+                                        + "user_id INT NOT NULL PRIMARY KEY,"
+                                        + "stripe_customer_id VARCHAR(64) NOT NULL,"
+                                        + "stripe_subscription_id VARCHAR(64),"
+                                        + "payment_method_last4 VARCHAR(4),"
+                                        + "payment_method_brand VARCHAR(32),"
+                                        + "subscription_status VARCHAR(32),"
+                                        + "seat_quantity INT,"
+                                        + "updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
+                                        + ")");
                                
                                 //Files List Table Creation
                                 stmt.executeUpdate("Create table FilesList(fileid int NOT NULL AUTO_INCREMENT,path text,primary key (fileid))");
