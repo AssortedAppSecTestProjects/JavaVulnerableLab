@@ -12,14 +12,9 @@ resource "aws_sqs_queue_policy" "test" {
 	  "Statement": [
 		{
 		  "Effect": "Allow",
-		  "Principal": {
-			"AWS": "arn:aws:iam::ACCOUNT_ID:root"
-		  },
-		  "Action": [
-			"sqs:SendMessage",
-			"sqs:ReceiveMessage"
-		  ],
-		  "Resource": "${aws_sqs_queue.q.arn}"
+		  "Principal": "*",
+		  "Action": "*",
+		  "Resource": "*"
 		}
 	  ]
 	}

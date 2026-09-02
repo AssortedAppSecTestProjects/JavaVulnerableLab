@@ -52,46 +52,6 @@
         <servlet-name>xxe</servlet-name>
         <servlet-class>org.cysecurity.cspf.jvl.controller.xxe</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>BillingConfig</servlet-name>
-        <servlet-class>org.cysecurity.cspf.jvl.controller.BillingConfigServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>BillingQuote</servlet-name>
-        <servlet-class>org.cysecurity.cspf.jvl.controller.BillingQuoteServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>BillingSetupIntent</servlet-name>
-        <servlet-class>org.cysecurity.cspf.jvl.controller.BillingSetupIntentServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>BillingComplete</servlet-name>
-        <servlet-class>org.cysecurity.cspf.jvl.controller.BillingCompleteServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SecConStep1</servlet-name>
-        <servlet-class>org.cysecurity.cspf.jvl.controller.SecConStep1Servlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SecConStep2</servlet-name>
-        <servlet-class>org.cysecurity.cspf.jvl.controller.SecConStep2Servlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SecConConfig</servlet-name>
-        <servlet-class>org.cysecurity.cspf.jvl.controller.SecConConfigServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SecConPaymentIntent</servlet-name>
-        <servlet-class>org.cysecurity.cspf.jvl.controller.SecConPaymentIntentServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CalendarWeekly</servlet-name>
-        <servlet-class>org.cysecurity.cspf.jvl.controller.CalendarWeeklyServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>WeeklyPerformanceReport</servlet-name>
-        <servlet-class>org.cysecurity.cspf.jvl.controller.WeeklyPerformanceReportServlet</servlet-class>
-    </servlet>
    
     <servlet-mapping>
         <servlet-name>Install</servlet-name>
@@ -140,46 +100,6 @@
    <servlet-mapping>
         <servlet-name>xxe</servlet-name>
         <url-pattern>/xxe.do</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>BillingConfig</servlet-name>
-        <url-pattern>/api/billing/config</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>BillingQuote</servlet-name>
-        <url-pattern>/api/billing/quote</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>BillingSetupIntent</servlet-name>
-        <url-pattern>/api/billing/setup-intent</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>BillingComplete</servlet-name>
-        <url-pattern>/api/billing/complete</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SecConStep1</servlet-name>
-        <url-pattern>/seccon/step1</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SecConStep2</servlet-name>
-        <url-pattern>/seccon/step2</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SecConConfig</servlet-name>
-        <url-pattern>/api/seccon/config</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SecConPaymentIntent</servlet-name>
-        <url-pattern>/api/seccon/payment-intent</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CalendarWeekly</servlet-name>
-        <url-pattern>/api/calendar/week</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>WeeklyPerformanceReport</servlet-name>
-        <url-pattern>/api/reports/weekly/send</url-pattern>
     </servlet-mapping>
    
 </web-app>

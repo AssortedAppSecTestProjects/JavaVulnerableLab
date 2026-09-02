@@ -10,15 +10,15 @@ resource "aws_lb_target_group" "front_end" {
 
 resource "aws_lb_listener" "front_end" {
   load_balancer_arn = aws_lb.front_end.arn
-  port              = "443"
-  protocol          = "HTTPS"
+  port              = "80"
+  protocol          = "HTTP"
 
   default_action {
     type = "redirect"
 
     redirect {
-      port        = "443"
-      protocol    = "HTTPS"
+      port        = "80"
+      protocol    = "HTTP"
       status_code = "HTTP_301"
     }
   }
@@ -41,7 +41,7 @@ resource "aws_instance" "http" {
     aws_security_group.web.id,
   ]
   subnet_id = aws_subnet.http.id
-  user_data = var.http_instance_user_data
+  user_data = "1234567890123456789012345678901234567890$"
   tags = {
     Name = each.key
   }
