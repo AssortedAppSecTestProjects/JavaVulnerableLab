@@ -12,15 +12,22 @@
     <project.java.version>1.8</project.java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <!-- Apiiro: tomcat-coyote 9.0.22 is critically vulnerable (Ghostcat/KEV). Stay on 9.0.x for Java 8; 9.0.118+ closes listed CVEs. -->
+    <tomcat.version>9.0.121</tomcat.version>
   </properties>
 
-  <!-- Pin transitive Tomcat artifacts for consistent resolution and license scanning (Apiiro OSS license guidance). -->
+  <!-- Pin sibling Tomcat artifacts to the same 9.0.x patch to avoid classpath drift (coyote, servlet-api, util). -->
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.apache.tomcat</groupId>
         <artifactId>tomcat-servlet-api</artifactId>
-        <version>9.0.109</version>
+        <version>${tomcat.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.tomcat</groupId>
+        <artifactId>tomcat-util</artifactId>
+        <version>${tomcat.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -55,7 +62,7 @@
 	<dependency>
 		<groupId>org.apache.tomcat</groupId>
 		<artifactId>tomcat-coyote</artifactId>
-		<version>9.0.109</version>
+		<version>${tomcat.version}</version>
 	</dependency>
 	<dependency>
 		<groupId>io.undertow</groupId>
